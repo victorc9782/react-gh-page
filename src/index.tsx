@@ -1,15 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+import Container from 'react-bootstrap/Container';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './index.css';
-import App from './App';
+import Menu from './Menu';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <div>Hello world!</div>,
+    },
+  ]);
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Menu />
+    <Container>
+        <RouterProvider router={router} />
+    </Container>
+    {/* <App /> */}
   </React.StrictMode>
 );
 
